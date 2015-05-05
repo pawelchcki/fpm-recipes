@@ -10,7 +10,7 @@ Vagrant.configure('2') do |config|
       docker.build_args = ['--rm=true', '--tag=wikia/fpm-recipes/ubuntu:12.04']
 
       # Avoid leaving unused containers behind.
-      docker.create_args = ['--rm=true']
+      docker.create_args = ['--rm=true', '--privileged=true']
     end
   end
 end
