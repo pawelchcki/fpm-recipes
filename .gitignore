@@ -1,2 +1,6 @@
 .vagrant/
 *.swp
+recipes/*/pkg/
+recipes/*/cache/
+recipes/*/tmp-*/
+
