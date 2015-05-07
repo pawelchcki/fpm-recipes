@@ -1,7 +1,11 @@
-FROM ubuntu:12.04.5
+FROM ubuntu:14.04
 
 RUN apt-get clean &&\
- apt-get update &&\
- apt-get install -y ruby1.9.1 ruby1.9.1-dev build-essential curl lsb-release &&\
- gem install fpm-cookery --no-ri --no-rdoc &&\
- apt-get clean
+apt-get update &&\
+apt-get install -y ruby1.9.1 ruby1.9.1-dev build-essential curl lsb-release &&\
+gem install fpm-cookery --no-ri --no-rdoc &&\
+apt-get install -y git-core &&\
+apt-get clean &&\
+curl -sSL https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz \
+	| tar xz -C /usr &&\
+mkdir /gopath
