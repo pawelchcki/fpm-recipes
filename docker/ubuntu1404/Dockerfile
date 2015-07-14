@@ -8,4 +8,5 @@ apt-get install -y git-core unzip &&\
 apt-get clean &&\
 curl -sSL https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz \
 	| tar xz -C /usr &&\
+
 mkdir /gopath

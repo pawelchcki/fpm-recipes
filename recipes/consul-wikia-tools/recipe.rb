@@ -8,11 +8,11 @@ class ConsulWikiaTools < FPM::Cookery::Recipe
     revision '1'
 
     def install
-    	bin.install ["tools/consul_url"]
+    	bin.install ["consul_url"]
     end
 
-    def build        
+    def build
         safesystem("go get github.com/hashicorp/consul/api")
-        safesystem("go build -i tools/consul_url.go")
+        safesystem("go build -i consul_url.go")
     end
 end
