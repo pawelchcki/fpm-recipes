@@ -3,4 +3,5 @@
 recipes/*/pkg/
 recipes/*/cache/
 recipes/*/tmp-*/
-
+packages/
+recipes/consul-wikia-tools/tools/consul_url
