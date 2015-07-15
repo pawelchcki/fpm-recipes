@@ -3,4 +3,4 @@
 if [ $1 = "configure" ]; then
   chown -R consul:consul /var/lib/consul
   service consul start || true
-end
+fi

@@ -9,5 +9,5 @@ fi
 # create consul user
 if ! getent passwd consul >/dev/null; then
  useradd -M -r -g consul -d /var/lib/consul \
-   -s /sbin/nologin -c "Consul Agent User" logstash
+   -s /sbin/nologin -c "Consul Agent User" consul
 fi
