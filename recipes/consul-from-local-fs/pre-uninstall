@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ $1 = "remove" ]; then
+ service consul stop >/dev/null 2>&1 || true
+
+ if getent passwd consul >/dev/null ; then
+   userdel consul
+ fi
+
+ if getent group consul >/dev/null ; then
+   groupdel consul
+ fi
+fi

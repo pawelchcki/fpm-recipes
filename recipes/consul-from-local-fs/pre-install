@@ -1,0 +1,13 @@
+#!/bin/sh
+service consul stop || true &> /dev/null
+
+# create consul group
+if ! getent group consul >/dev/null; then
+ groupadd -r consul
+fi
+
+# create consul user
+if ! getent passwd consul >/dev/null; then
+ useradd -M -r -g consul -d /var/lib/consul \
+   -s /sbin/nologin -c "Consul Agent User" logstash
+fi
