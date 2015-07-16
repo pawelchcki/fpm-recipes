@@ -1,0 +1,84 @@
+[submodule "recipes/consul-from-local-fs/gopath/src/golang.org/x/crypto"]
+	path = recipes/consul-from-local-fs/gopath/src/golang.org/x/crypto
+	url = https://go.googlesource.com/crypto
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/mitchellh/cli"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/mitchellh/cli
+	url = https://github.com/mitchellh/cli
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/mitchellh/mapstructure"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/mitchellh/mapstructure
+	url = https://github.com/mitchellh/mapstructure
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/boltdb/bolt"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/boltdb/bolt
+	url = https://github.com/boltdb/bolt
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/consul"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/consul
+	url = https://github.com/hashicorp/consul
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/scada-client"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/scada-client
+	url = https://github.com/hashicorp/scada-client
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/hcl"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/hcl
+	url = https://github.com/hashicorp/hcl
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/logutils"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/logutils
+	url = https://github.com/hashicorp/logutils
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-syslog"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-syslog
+	url = https://github.com/hashicorp/go-syslog
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-multierror"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-multierror
+	url = https://github.com/hashicorp/go-multierror
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/raft-mdb"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/raft-mdb
+	url = https://github.com/hashicorp/raft-mdb
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-checkpoint"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-checkpoint
+	url = https://github.com/hashicorp/go-checkpoint
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/raft-boltdb"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/raft-boltdb
+	url = https://github.com/hashicorp/raft-boltdb
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/golang-lru"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/golang-lru
+	url = https://github.com/hashicorp/golang-lru
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/serf"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/serf
+	url = https://github.com/hashicorp/serf
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/raft"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/raft
+	url = https://github.com/hashicorp/raft
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/net-rpc-msgpackrpc"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/net-rpc-msgpackrpc
+	url = https://github.com/hashicorp/net-rpc-msgpackrpc
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/memberlist"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/memberlist
+	url = https://github.com/hashicorp/memberlist
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/consul-migrate"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/consul-migrate
+	url = https://github.com/hashicorp/consul-migrate
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-msgpack"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/go-msgpack
+	url = https://github.com/hashicorp/go-msgpack
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/yamux"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/hashicorp/yamux
+	url = https://github.com/hashicorp/yamux
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/miekg/dns"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/miekg/dns
+	url = https://github.com/miekg/dns
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/armon/circbuf"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/armon/circbuf
+	url = https://github.com/armon/circbuf
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/armon/gomdb"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/armon/gomdb
+	url = https://github.com/armon/gomdb
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/armon/go-metrics"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/armon/go-metrics
+	url = https://github.com/armon/go-metrics
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/armon/go-radix"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/armon/go-radix
+	url = https://github.com/armon/go-radix
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/ryanuber/columnize"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/ryanuber/columnize
+	url = https://github.com/ryanuber/columnize
+[submodule "recipes/consul-from-local-fs/gopath/src/github.com/inconshreveable/muxado"]
+	path = recipes/consul-from-local-fs/gopath/src/github.com/inconshreveable/muxado
+	url = https://github.com/inconshreveable/muxado
