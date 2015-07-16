@@ -20,4 +20,4 @@ $(RECIPES): %: recipes/%/recipe.rb force
 
 collect:
 	@mkdir -p $(PACKAGE_DIR)
-	@find -name "*.deb" | xargs -I: mv : $(PACKAGE_DIR)/
+	@find recipes/ -name "*.deb" | xargs -I: mv : $(PACKAGE_DIR)/
