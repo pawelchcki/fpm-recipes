@@ -5,7 +5,7 @@ class Consul < FPM::Cookery::Recipe
   homepage 'https://github.com/pchojnacki/fpm-recipes'
   
   version  '0.5.2'
-  revision 'wikia5'
+  revision 'wikia7'
 
   post_install 'post-install'
   pre_install 'pre-install'
