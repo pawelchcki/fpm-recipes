@@ -4,8 +4,8 @@ class Consul < FPM::Cookery::Recipe
   description 'Consul with TCP fallback backport, package built using https://github.com/pchojnacki/fpm-recipes'
   homepage 'https://github.com/pchojnacki/fpm-recipes'
   
-  version  '0.6.0'
-  revision 'wikiaalfa1'
+  version  '0.5.2'
+  revision 'wikia9'
 
   post_install 'post-install'
   pre_install 'pre-install'
