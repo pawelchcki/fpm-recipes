@@ -15,6 +15,5 @@ class ConsulWikiaTools < FPM::Cookery::Recipe
         safesystem("go get github.com/hashicorp/consul/api")
         safesystem("go build -i consul_url.go")
         safesystem("go build -i consul_clean_services.go")
-        
     end
 end

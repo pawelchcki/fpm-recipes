@@ -34,6 +34,8 @@ type failingCheckMap map[string]*failingCheck
 
 type system struct {
 	client             api.Client
+	failingChecksC	chan failingCheckMap
+	failedServiceEvent chan failingCheck
 }
 
 func newSystem() system {
@@ -43,6 +45,8 @@ func newSystem() system {
 	}
 	return system{
 		*client,
+		make(chan failingCheckMap),
+		make(chan failingCheck),
 	}
 }
 func (s *system) fetchChecksStatus(wg sync.WaitGroup) {
@@ -81,10 +85,6 @@ func (s*system)deregisterFailedServices() {
 
 func main() {
 	sys := newSystem()
-	cfg := api.DefaultConfig()
-	cfg.Address = "dev-consul:8500"
-	failingChecksC
-   chan failingCheck
 
 	var wg sync.WaitGroup
 	wg.Add(1)
