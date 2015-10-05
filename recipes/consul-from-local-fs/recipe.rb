@@ -5,7 +5,7 @@ class Consul < FPM::Cookery::Recipe
   homepage 'https://github.com/pchojnacki/fpm-recipes'
   
   version  '0.5.2'
-  revision 'wikia9'
+  revision 'wikia10'
 
   post_install 'post-install'
   pre_install 'pre-install'
@@ -21,6 +21,7 @@ class Consul < FPM::Cookery::Recipe
   def build
     ENV['GOPATH'] = workdir("gopath")
     safesystem('cd /vagrant; git submodule update --init --recursive')
+    safesystem("cd $GOPATH/src/github.com/hashicorp/consul; git apply #{workdir("0001-Change-configs-to-reduce-the-chance-of-node-being-ma.patch")}")
     safesystem('cd $GOPATH/src/github.com/hashicorp/consul; make')
   end
 end
