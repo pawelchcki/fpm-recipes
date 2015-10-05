@@ -21,7 +21,9 @@ class Consul < FPM::Cookery::Recipe
   def build
     ENV['GOPATH'] = workdir("gopath")
     safesystem('cd /vagrant; git submodule update --init --recursive')
+    safesystem("cd /vagrant; git submodule foreach git reset --hard")
     safesystem("cd $GOPATH/src/github.com/hashicorp/consul; git apply #{workdir("0001-Change-configs-to-reduce-the-chance-of-node-being-ma.patch")}")
     safesystem('cd $GOPATH/src/github.com/hashicorp/consul; make')
+    safesystem("cd /vagrant; git submodule foreach git reset --hard") # cleanup after self
   end
 end
