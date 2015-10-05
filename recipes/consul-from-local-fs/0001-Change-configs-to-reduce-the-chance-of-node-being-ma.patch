@@ -1,31 +1,47 @@
-From 34551aee21818f3e353230088ea7407dbbd48e8d Mon Sep 17 00:00:00 2001
+From d2b5cf6c40f5f2e762362cb7534c9714c1731fe2 Mon Sep 17 00:00:00 2001
 From: Pawel Chojnacki <pawel@chojnacki.ws>
-Date: Mon, 5 Oct 2015 16:29:04 +0200
-Subject: [PATCH] Change configs to reduce the chance of node being marked as
+Date: Mon, 5 Oct 2015 18:30:57 +0200
+Subject: [PATCH] Change configs to reduce the chance of node being marked as 
  failed.
 
 ---
- consul/config.go | 7 +++++++
- 1 file changed, 7 insertions(+)
+ consul/config.go | 8 ++++++++
+ version.go       | 3 ++-
+ 2 files changed, 10 insertions(+), 1 deletion(-)
 
 diff --git a/consul/config.go b/consul/config.go
-index 541c2bc..d95b697 100644
+index 541c2bc..3219e09 100644
 --- a/consul/config.go
 +++ b/consul/config.go
-@@ -262,6 +262,13 @@ func DefaultConfig() *Config {
+@@ -262,6 +262,14 @@ func DefaultConfig() *Config {
  	conf.SerfLANConfig.ReconnectTimeout = 3 * 24 * time.Hour
  	conf.SerfWANConfig.ReconnectTimeout = 3 * 24 * time.Hour
  
 +	// https://www.serfdom.io/docs/internals/simulator.html
 +	conf.SerfLANConfig.MemberlistConfig.ProbeInterval = 30 * time.Second
-+	conf.SerfLANConfig.MemberlistConfig.GossipNodes = 4 // Gossip to 4 nodes instead of 3. At the expense of higher bandwidth (2x) decrease convergence time
-+	conf.SerfLANConfig.MemberlistConfig.RetransmitMult = 5 // Retransmit messages 5*log(N+1) 
-+	conf.SerfLANConfig.MemberlistConfig.SuspicionMult = 20 // Suspect a node for 20 * log(N+1) * GossipInterval
-+	conf.SerfLANConfig.RecentIntentBuffer = 512 // Increase from 128 to allow for better filtering of known messages
++	conf.SerfLANConfig.MemberlistConfig.ProbeTimeout = 2 * time.Second // increase the probe timeout to 2s
++	conf.SerfLANConfig.MemberlistConfig.GossipNodes = 4                // Gossip to 4 nodes instead of 3. At the expense of higher bandwidth (2x) decrease convergence time
++	conf.SerfLANConfig.MemberlistConfig.RetransmitMult = 5             // Retransmit messages 5*log(N+1)
++	conf.SerfLANConfig.MemberlistConfig.SuspicionMult = 20             // Suspect a node for 20 * log(N+1) * GossipInterval
++	conf.SerfLANConfig.RecentIntentBuffer = 512                        // Increase from 128 to allow for better filtering of known messages
 +
  	// WAN Serf should use the WAN timing, since we are using it
  	// to communicate between DC's
  	conf.SerfWANConfig.MemberlistConfig = memberlist.DefaultWANConfig()
+diff --git a/version.go b/version.go
+index f916f55..128063c 100644
+--- a/version.go
++++ b/version.go
+@@ -5,7 +5,8 @@ var GitCommit string
+ var GitDescribe string
+ 
+ // The main version number that is being run at the moment.
+-const Version = "0.5.2"
++const Version = "0.5.2-11" // add identifiable revision that can be queried through serf
++
+ 
+ // A pre-release marker for the version. If this is "" (empty string)
+ // then it means that it is a final release. Otherwise, this is a pre-release
 -- 
 2.4.3
 
