@@ -5,7 +5,7 @@ class DockerRegistry < FPM::Cookery::Recipe
   homepage 'https://github.com/pchojnacki/fpm-recipes'
   
   version  '2.1.1'
-  revision 'wikia1'
+  revision 'wikia2'
 
   # post_install 'post-install'
   # pre_install 'pre-install'
@@ -25,8 +25,8 @@ class DockerRegistry < FPM::Cookery::Recipe
     distDir = ENV['GOPATH'] + "/src/github.com/docker/distribution"
 
     safesystem('go get github.com/tools/godep')
-    safesystem("git clone https://github.com/docker/distribution.git #{distDir}")
-    safesystem("cd #{distDir}; git reset --hard v#{version}")
+    safesystem("git clone https://github.com/lorieri/distribution.git #{distDir}")
+    safesystem("cd #{distDir}; git reset --hard radosgw")
     safesystem("cd #{distDir}; GOPATH=`$GOPATH/bin/godep path`:$GOPATH make PREFIX=#{workdir("tmp-build")} binaries")
   end
 end
