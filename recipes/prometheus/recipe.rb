@@ -9,7 +9,6 @@ class Prometheus < FPM::Cookery::Recipe
     def install
         bin.install ['prometheus', 'promtool']
         share('prometheus').install %w( consoles console_libraries )
-
     end
 
     def build
