@@ -7,3 +7,4 @@ packages/
 recipes/consul-wikia-tools/tools/consul_url
 recipes/consul-from-local-fs/gopath/pkg
 recipes/consul-from-local-fs/gopath/bin
+recipes/prometheus-mesos-exporter/gopath
