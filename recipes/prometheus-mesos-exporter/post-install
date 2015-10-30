@@ -1,6 +1,6 @@
 #!/bin/bash
 
 if [ $1 = "configure" ]; then
-  $SERVICE=prometheus_node_exporter
+  SERVICE=prometheus-mesos-exporter
   initctl start $SERVICE || initctl restart $SERVICE || true
 fi
