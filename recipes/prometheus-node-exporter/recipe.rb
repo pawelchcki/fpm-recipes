@@ -1,9 +1,11 @@
 class PrometheusNodeExporter < FPM::Cookery::Recipe
-  source 'https://github.com/prometheus/mesos_exporter/releases/download/0.1.0/mesos_exporter-0.1.0.linux-amd64.tar.gz' 
-  sha256 'e38bad9180d91acaf137381c05a2a559c2b2a655cf7f862d3448816b7ce31899'
-  
+  source 'https://github.com/prometheus/node_exporter/releases/download/0.12.0rc1/node_exporter-0.12.0rc1.linux-amd64.tar.gz' 
+  sha256 'a68d188c994740e5a4d10fb2dfde3628f8979977cd3ce798cfc9f1e1b4968bce'
+
   version  '0.12.0rc1'
   revision '1'
+
+  name "prometheus-node-exporter"
 
   post_install 'post-install'
 
