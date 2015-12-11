@@ -1,6 +1,6 @@
 #!/bin/bash
 
 if [ $1 = "configure" ]; then
-  SERVICE=prometheus-mesos-exporter
+  SERVICE=prometheus-consul-exporter
   initctl start $SERVICE || initctl restart $SERVICE || true
 fi
