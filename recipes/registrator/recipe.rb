@@ -13,7 +13,7 @@ class Registrator < FPM::Cookery::Recipe
 
   def build
     ENV['GOPATH'] = workdir("tmp-build/gopath")
-    distDir = ENV['GOPATH'] + "/src/github.com/docker/distribution"
+    distDir = ENV['GOPATH'] + "/src/github.com/gliderlabs/registrator"
 
     safesystem('go get github.com/tools/godep')
     safesystem("git clone https://github.com/gliderlabs/registrator.git #{distDir}")
