@@ -7,7 +7,7 @@ class ConsulTemplate < FPM::Cookery::Recipe
     version  '0.10.0'
     revision 'wikia1'
     def install
-    	bin.install ['consul-template']
+        bin.install ['consul-template']
     end
 
     def build

@@ -5,9 +5,18 @@ class Consul < FPM::Cookery::Recipe
     name 'consul'
     
     version  '0.6.1'
-    revision '1'
+    revision '2'
+
+    post_install 'post-install'
+    pre_install 'pre-install'
+    pre_uninstall 'pre-uninstall'
+
     def install
-    	bin.install ['consul']
+        bin.install ['consul']
+        etc('consul.d').mkdir
+        etc('init').install_p workdir('consul.conf')
+        var('lib/consul').mkdir
+        etc('init').install_p workdir('consul.conf')
     end
 
     def build
