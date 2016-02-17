@@ -20,19 +20,16 @@ class Consul < FPM::Cookery::Recipe
 
   def build
     ENV['GOPATH'] = workdir("gopath")
-    # workdir('/vagrant')
-    # mkdir_p('build')
-    # workdir('/vagrant/build')
-    safesystem("chmod +x /usr/local/bin/godep")
-    safesystem('curl -sSL https://github.com/hashicorp/consul/archive/v0.6.3.tar.gz | tar --strip-components 1 -xzf  -')
-    safesystem("mkdir Godeps && cp deps/v0-6-3.json Godeps/Godeps.json")
-    safesystem("mkdir #{workdir("gopath")}/src/github.com/hashicorp; ln -s #{builddir} #{workdir("gopath")}/src/github.com/hashicorp/consul || true")
+    ENV['PATH'] = ENV['PATH'] + ":" + ENV['GOPATH'] + "/bin"
+    ENV['XC_ARCH'] = "amd64"
+    ENV['XC_OS'] = "linux"
+
+    consul_dir = workdir("gopath/src/github.com/hashicorp/consul")
+    safesystem("git clone https://github.com/hashicorp/consul.git #{consul_dir} || true")
+    safesystem("cd #{consul_dir} && git reset --hard v0.6.3")
+    safesystem("mkdir Godeps && cp #{consul_dir}/deps/v0-6-3.json Godeps/Godeps.json")
     safesystem("godep restore")
-    safesystem("cd #{workdir("gopath")}/src/github.com/hashicorp/consul && make")
-    # safesystem('cd /vagrant; git submodule update --init --recursive')
-    # safesystem("cd /vagrant; git submodule foreach git reset --hard")
-    # safesystem("cd $GOPATH/src/github.com/hashicorp/consul; git apply #{workdir("0001-Change-configs-to-reduce-the-chance-of-node-being-ma.patch")}")
-    # safesystem('cd $GOPATH/src/github.com/hashicorp/consul; make')
-    # safesystem("cd /vagrant; git submodule foreach git reset --hard") # cleanup after self
+    safesystem("cd #{consul_dir} && git apply #{workdir("0001-Wikia-Consul-tunings.patch")}")
+    safesystem("cd #{consul_dir} && make bin")
   end
 end

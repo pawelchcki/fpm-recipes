@@ -1,19 +1,18 @@
-From d2b5cf6c40f5f2e762362cb7534c9714c1731fe2 Mon Sep 17 00:00:00 2001
+From 2c024cf701ee54cc386cfa5bf6fda566214972c4 Mon Sep 17 00:00:00 2001
 From: Pawel Chojnacki <pawel@chojnacki.ws>
-Date: Mon, 5 Oct 2015 18:30:57 +0200
-Subject: [PATCH] Change configs to reduce the chance of node being marked as 
- failed.
+Date: Tue, 16 Feb 2016 16:49:45 +0100
+Subject: [PATCH] Wikia Consul tunings
 
 ---
  consul/config.go | 8 ++++++++
- version.go       | 3 ++-
- 2 files changed, 10 insertions(+), 1 deletion(-)
+ version.go       | 2 +-
+ 2 files changed, 9 insertions(+), 1 deletion(-)
 
 diff --git a/consul/config.go b/consul/config.go
-index 541c2bc..3219e09 100644
+index 78b3fc8..3dcdefc 100644
 --- a/consul/config.go
 +++ b/consul/config.go
-@@ -262,6 +262,14 @@ func DefaultConfig() *Config {
+@@ -292,6 +292,14 @@ func DefaultConfig() *Config {
  	conf.SerfLANConfig.ReconnectTimeout = 3 * 24 * time.Hour
  	conf.SerfWANConfig.ReconnectTimeout = 3 * 24 * time.Hour
  
@@ -29,19 +28,18 @@ index 541c2bc..3219e09 100644
  	// to communicate between DC's
  	conf.SerfWANConfig.MemberlistConfig = memberlist.DefaultWANConfig()
 diff --git a/version.go b/version.go
-index f916f55..128063c 100644
+index b6b9b2b..ac0179c 100644
 --- a/version.go
 +++ b/version.go
-@@ -5,7 +5,8 @@ var GitCommit string
- var GitDescribe string
+@@ -7,7 +7,7 @@ var (
+ )
  
  // The main version number that is being run at the moment.
--const Version = "0.5.2"
-+const Version = "0.5.2-11" // add identifiable revision that can be queried through serf
-+
+-const Version = "0.6.3"
++const Version = "0.6.3-wikia1"
  
  // A pre-release marker for the version. If this is "" (empty string)
  // then it means that it is a final release. Otherwise, this is a pre-release
 -- 
-2.4.3
+2.5.0
 
